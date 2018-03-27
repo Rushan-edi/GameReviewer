@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar= (Toolbar)findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
 
-        getSupportActionBar().setTitle("Game Reddit");
+        getSupportActionBar().setTitle("Gaming TechTrack");
         toolbar.setTitleTextColor(Color.parseColor("#8c5ca4"));
     }
 }

@@ -123,4 +123,32 @@ public class DatabaseHelper extends SQLiteOpenHelper{
 
         return gameReview;
     }
+    public  GameReview getGameReviewbyGenre(String genre){
+
+        // get readable database as we are not inserting anything
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor =db.query(GameReview.TABLE_NAME,new String[]{GameReview.COLUMN_ID,GameReview.COLUMN_NAME,
+                        GameReview.COLUMN_DESC,GameReview.COLUMN_IMG,GameReview.COLUMN_ADDED_USER,
+                        GameReview.COLUMN_ADDED_DATE},GameReview.COLUMN_GENRE+"=?",
+                new String[]{String.valueOf(genre)},null, null, null);
+
+        if (cursor != null)
+            cursor.moveToFirst();
+
+        // prepare GameReview object
+
+        GameReview gameReview= new GameReview(cursor.getInt(cursor.getColumnIndex(GameReview.COLUMN_ID)),
+                cursor.getString(cursor.getColumnIndex(GameReview.COLUMN_NAME)),
+                cursor.getString(cursor.getColumnIndex(GameReview.COLUMN_DESC)),
+                cursor.getString(cursor.getColumnIndex(GameReview.COLUMN_IMG)),
+                cursor.getString(cursor.getColumnIndex(GameReview.COLUMN_GENRE)),
+                cursor.getString(cursor.getColumnIndex(GameReview.COLUMN_ADDED_DATE)),
+                cursor.getString(cursor.getColumnIndex(GameReview.COLUMN_ADDED_USER)));
+
+        // close the db connection
+        cursor.close();
+
+        return gameReview;
+    }
 }
