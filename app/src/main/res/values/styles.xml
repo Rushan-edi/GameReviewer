@@ -1,11 +1,28 @@
 <resources>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+     <!--Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
+        <item name="android:titleTextStyle">@color/colorPrimary</item>
+        <item name="android:textColor">@color/colorText</item>
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
     </style>
+
+    <!--<style name="AppTheme" parent="@android:style/Theme.Holo.Light">-->
+        <!--&lt;!&ndash; Customize your theme here. &ndash;&gt;-->
+        <!--<item name="android:actionBarStyle">@style/CustomActionBar</item>-->
+
+    <!--</style>-->
+    <!--<style name="CustomActionBar" parent="@android:style/Widget.Holo.Light.ActionBar">-->
+        <!--&lt;!&ndash; Customize your theme here. &ndash;&gt;-->
+        <!--<item name="android:background">@color/colorPrimary</item>-->
+        <!--<item name="android:titleTextStyle">@style/CustomActionBar</item>-->
+    <!--</style>-->
+<!--<style name="CustomTextColor" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">-->
+        <!--<item name="android:textColor">@color/colorWhite</item>-->
+    <!--</style>-->
 
 </resources>
