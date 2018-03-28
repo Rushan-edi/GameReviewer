@@ -63,6 +63,7 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
                 android:layout_rowWeight="1"
+                android:tag="action"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="8dp"
                 card_view:cardBackgroundColor="@color/colorPrimaryDark">
@@ -75,10 +76,11 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="118dp"
-                        android:layout_height="85dp"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
                         android:layout_gravity="center_horizontal"
-                        android:src="@drawable/action" />
+                        android:src="@drawable/action"
+                        android:tag="action" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -104,6 +106,7 @@
                 android:layout_rowWeight="1"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="8dp"
+                android:tag="race"
                 card_view:cardBackgroundColor="@color/colorPrimaryDark">
 
                 <LinearLayout
@@ -114,8 +117,8 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="107dp"
-                        android:layout_height="87dp"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
                         android:layout_gravity="center_horizontal"
                         android:src="@drawable/race" />
 
@@ -146,6 +149,7 @@
                 android:layout_rowWeight="1"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="8dp"
+                android:tag="adeventure"
                 card_view:cardBackgroundColor="@color/colorPrimaryDark">
 
                 <LinearLayout
@@ -156,8 +160,8 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="115dp"
-                        android:layout_height="87dp"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
                         android:layout_gravity="center_horizontal"
                         android:src="@drawable/adventure" />
 
@@ -185,6 +189,7 @@
                 android:layout_rowWeight="1"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="8dp"
+                android:tag="moba"
                 card_view:cardBackgroundColor="@color/colorPrimaryDark">
 
                 <LinearLayout
@@ -195,8 +200,8 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="117dp"
-                        android:layout_height="87dp"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
                         android:layout_gravity="center_horizontal"
                         android:src="@drawable/moba" />
 
@@ -226,6 +231,7 @@
                 android:layout_marginRight="16dp"
                 android:layout_rowWeight="1"
                 app:cardCornerRadius="8dp"
+                android:tag="rpg"
                 app:cardElevation="8dp"
                 card_view:cardBackgroundColor="@color/colorPrimaryDark">
 
@@ -237,8 +243,8 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="117dp"
-                        android:layout_height="86dp"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
                         android:layout_gravity="center_horizontal"
                         android:src="@drawable/rpg" />
 
@@ -265,6 +271,7 @@
                 android:layout_marginRight="16dp"
                 android:layout_rowWeight="1"
                 app:cardCornerRadius="8dp"
+                android:tag="sports"
                 app:cardElevation="8dp"
                 card_view:cardBackgroundColor="@color/colorPrimaryDark">
 
@@ -276,8 +283,8 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="118dp"
-                        android:layout_height="88dp"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
                         android:layout_gravity="center_horizontal"
                         android:src="@drawable/sport" />
 
