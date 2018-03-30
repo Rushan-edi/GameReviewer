@@ -7,12 +7,15 @@ import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     GridLayout mainGrid;
+    DatabaseHelper myDb;
+    Button btn_list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,15 +24,29 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar= (Toolbar)findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
 
+//        myDb=new DatabaseHelper(this,"Gamereviewdb.sqlite",null,1);
+        myDb=new DatabaseHelper(this);
+
         getSupportActionBar().setTitle("Gaming TechNote");
         toolbar.setTitleTextColor(Color.parseColor("#8c5ca4"));
 
+        btn_list=(Button)findViewById(R.id.btn_list);
+
         mainGrid=(GridLayout)findViewById(R.id.mainGrid);
 
-        //set event
-//        setSingleEvent(mainGrid);
+             //  set event
+            //   setSingleEvent(mainGrid);
 
         setToogleEvent(mainGrid);
+
+        btn_list.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent=new Intent(MainActivity.this,ReviewListActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
     }
@@ -49,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     Toast.makeText(MainActivity.this,"Moving..",Toast.LENGTH_SHORT).show();
+//                    Intent intent = new Intent(getApplicationContext(),ReviewListActivity.class);
                     Intent intent = new Intent(getApplicationContext(),AddGameActivity.class);
                     intent.putExtra("genre",genrevalue);
                     startActivity(intent);

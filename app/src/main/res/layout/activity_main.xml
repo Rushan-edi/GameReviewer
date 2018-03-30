@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/main_background"
     tools:context="com.mobile.gamereviewer.MainActivity">
 
 
@@ -12,7 +13,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/main_background"
+
 
         android:orientation="vertical"
         android:weightSum="10">
@@ -27,17 +28,28 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="50dp"
             android:layout_weight="2">
 
             <TextView
                 android:id="@+id/textGrid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:text="Game Review"
+                android:textAlignment="center"
+                android:textSize="34sp" />
+
+            <Button
+                android:id="@+id/btn_list"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:text="GAME REVIWER"
-                android:textColor="@android:color/white"
-                android:textSize="34sp" />
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="9dp"
+                android:layout_marginRight="9dp"
+                android:text="Button" />
 
         </RelativeLayout>
 

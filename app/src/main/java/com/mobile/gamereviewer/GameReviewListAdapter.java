@@ -3,6 +3,7 @@ package com.mobile.gamereviewer;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.mobile.gamereviewer.model.GameReviewModel;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -47,8 +49,8 @@ public class GameReviewListAdapter extends BaseAdapter {
 
     private  class  ViewHolder{
 
-            ImageView imageView;
-            TextView textName;
+            ImageView item_img;
+            TextView item_txt;
 
     }
 
@@ -64,8 +66,9 @@ public class GameReviewListAdapter extends BaseAdapter {
             row=layoutInflater.inflate(layout,null);
 
 
-            holder.textName =(TextView)row.findViewById(R.id.textName);
-            holder.imageView =(ImageView) row.findViewById(R.id.imageView);
+            holder.item_txt =(TextView)row.findViewById(R.id.item_txt);
+            holder.item_img =(ImageView) row.findViewById(R.id.item_img);
+            row.setTag(holder);
         }
         else {
 
@@ -74,11 +77,14 @@ public class GameReviewListAdapter extends BaseAdapter {
         }
         GameReviewModel gameReview= itemlist.get(position);
 
-        holder.textName.setText(gameReview.getGame_name());
+        holder.item_txt.setText(gameReview.getGame_name());
 
-        byte[] gameImage=gameReview.getGame_img();
-        Bitmap bitmap= BitmapFactory.decodeByteArray(gameImage,0,gameImage.length);
-        holder.imageView.setImageBitmap(bitmap);
+//        byte[] gameImage=gameReview.getGame_img();
+//
+//        Bitmap bitmap= BitmapFactory.decodeByteArray(gameImage,0,gameImage.length);
+//        Log.e("IMAGE REV",bitmap.toString());
+//        holder.item_img.setImageBitmap(bitmap);
+        Picasso.with(context).load("http://i.imgur.com/DvpvklR.png").into(holder.item_img);
 
         return row;
     }

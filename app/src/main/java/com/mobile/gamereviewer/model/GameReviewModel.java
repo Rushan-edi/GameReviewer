@@ -24,6 +24,12 @@ public class GameReviewModel {
         this.added_user = added_user;
     }
 
+    public GameReviewModel(int game_id, String game_name, byte[] game_img) {
+        this.game_id = game_id;
+        this.game_name = game_name;
+        this.game_img = game_img;
+    }
+
     public int getGame_id() {
         return game_id;
     }

@@ -1,8 +1,10 @@
 package com.mobile.gamereviewer;
 
+import android.database.Cursor;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.GridView;
 import android.widget.Toast;
 
@@ -32,10 +34,27 @@ public class ReviewListActivity extends AppCompatActivity {
         adapter=new GameReviewListAdapter(this,R.layout.item,list);
         gridView.setAdapter(adapter);
 
-        DatabaseHelper databaseHelper=new DatabaseHelper(this,DatabaseHelper.DATABASE_NAME,null,DatabaseHelper.DATABASE_VERSION);
-        GameReview gameReview= databaseHelper.getGameReviewbyGenre(genre);
+
+        DatabaseHelper databaseHelper=new DatabaseHelper(this);
+        Cursor cursor= databaseHelper.getGameReviewbyGenre(genre);
+
+
         list.clear();
 
+        while (cursor.moveToNext()){
+            int id = cursor.getInt(0);
+            String name=cursor.getString(1);
+            byte[] image=cursor.getBlob(2);
+
+            list.add(new GameReviewModel(id,name,image));
+
+
+
+        }
+//        for(int i =0 ; i<list.size();i++) {
+//            Log.e("GameREview Data", list.get(i).game_img.toString());
+//        }
+        adapter.notifyDataSetChanged();
 
     }
 }
