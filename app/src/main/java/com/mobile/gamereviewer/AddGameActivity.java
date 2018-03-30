@@ -34,7 +34,7 @@ public class AddGameActivity extends AppCompatActivity {
     ImageView imageView;
     RatingBar ratingGame;
     Button  btn_add;
-    Button  btn_choose;
+//    Button  btn_choose;
 
     final int REQUEST_CODE_GALLERY=999;
 
@@ -55,22 +55,22 @@ public class AddGameActivity extends AppCompatActivity {
        ratingGame = (RatingBar) findViewById(R.id.game_rate);
        spinnerGenre=(Spinner)findViewById(R.id.game_genre);
        btn_add=(Button)findViewById(R.id.btn_submit);
-       btn_choose=(Button)findViewById(R.id.btn_choose);
-       imageView= (ImageView)findViewById(R.id.upload_image);
+//       btn_choose=(Button)findViewById(R.id.btn_choose);
+//       imageView= (ImageView)findViewById(R.id.upload_image);
 
-        btn_choose.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                ActivityCompat.requestPermissions(
-
-                        AddGameActivity.this,
-                        new String []{Manifest.permission.READ_EXTERNAL_STORAGE},
-                        REQUEST_CODE_GALLERY
-
-                );
-            }
-        });
+//        btn_choose.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//                ActivityCompat.requestPermissions(
+//
+//                        AddGameActivity.this,
+//                        new String []{Manifest.permission.READ_EXTERNAL_STORAGE},
+//                        REQUEST_CODE_GALLERY
+//
+//                );
+//            }
+//        });
 
         addGameReview();
 
